@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testing.org/testng-1.0.dtd">
+<suite name="Reg_Suite">
+    <test name="TestClassesExecute">
+        <classes>
+            <class name="com.positiveTests.LoginPageTest"/>
+            <class name="com.positiveTests.LogoutPageTest"/>
+            <class name="com.positiveTests.ProductAddToCartPageTest"/>
+            <class name="com.negativeTests.InvalidLoginPageTest"/>
+        </classes>
+    </test>
+</suite>

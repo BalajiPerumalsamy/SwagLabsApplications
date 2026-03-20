@@ -1,14 +1,14 @@
 package com.positiveTests;
 
+import com.Listeners.MyListener;
 import com.swagLabsPages.BasePage;
 import com.swagLabsPages.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import java.util.Properties;
-
+@Listeners(MyListener.class)
 public class LoginPageTest
 {
     public BasePage basePage;

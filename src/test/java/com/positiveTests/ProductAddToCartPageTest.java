@@ -1,14 +1,16 @@
 package com.positiveTests;
 
+import com.Listeners.MyListener;
 import com.swagLabsPages.BasePage;
 import com.swagLabsPages.LoginPage;
 import com.swagLabsPages.ProductAddToCartPage;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-
+@Listeners(MyListener.class)
 public class ProductAddToCartPageTest
 {
     public BasePage basePage;

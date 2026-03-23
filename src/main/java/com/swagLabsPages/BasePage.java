@@ -64,20 +64,46 @@ public class BasePage
         }
     }
 
-    public String captureScreenshot(String testName)
+    public static String captureScreenshot(String testName)
     {
         String path = "screenshots/" + testName + ".png";
+
         try
         {
-            TakesScreenshot screenshot=(TakesScreenshot) driver;
-            File src=screenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File(path);
-            FileHandler.copy(src,file);
+            if(driver == null)
+            {
+                System.out.println("Driver is null - screenshot skipped");
+                return path;
+            }
+
+            TakesScreenshot screenshot = (TakesScreenshot) driver;
+            File src = screenshot.getScreenshotAs(OutputType.FILE);
+            File file = new File(path);
+            FileHandler.copy(src, file);
         }
-        catch(IOException e)
+        catch(Exception e)
         {
-            System.out.println(e);
+            System.out.println("Screenshot failed: " + e.getMessage());
         }
+
         return path;
     }
 }
+
+
+/*
+        screenshots/verifyEmptyFieldLogin.png
+        screenshots/verifyInvalidUserLogin.png
+        screenshots/verifyLockedUserLogin.png
+        screenshots/verifyLogin.png
+
+        modified:   ExtentReport.html
+        modified:   Testng.xml
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+
+*/

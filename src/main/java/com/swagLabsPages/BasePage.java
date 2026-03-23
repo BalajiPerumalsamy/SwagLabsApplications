@@ -89,21 +89,3 @@ public class BasePage
         return path;
     }
 }
-
-
-/*
-        screenshots/verifyEmptyFieldLogin.png
-        screenshots/verifyInvalidUserLogin.png
-        screenshots/verifyLockedUserLogin.png
-        screenshots/verifyLogin.png
-
-        modified:   ExtentReport.html
-        modified:   Testng.xml
-        modified:
-        modified:
-        modified:
-        modified:
-        modified:
-        modified:
-
-*/

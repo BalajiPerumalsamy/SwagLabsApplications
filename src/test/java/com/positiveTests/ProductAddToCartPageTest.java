@@ -5,10 +5,7 @@ import com.swagLabsPages.BasePage;
 import com.swagLabsPages.LoginPage;
 import com.swagLabsPages.ProductAddToCartPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 @Listeners(MyListener.class)
 public class ProductAddToCartPageTest
@@ -17,7 +14,7 @@ public class ProductAddToCartPageTest
     public LoginPage loginPage;
     public ProductAddToCartPage addToCartPage;
 
-    @BeforeTest
+    @BeforeMethod
     public void setUp()
     {
         basePage=new BasePage();
@@ -32,10 +29,10 @@ public class ProductAddToCartPageTest
     {
         addToCartPage=new ProductAddToCartPage();
         addToCartPage.selectProduct();
-        //Assert.assertTrue(addToCartPage.showRemoveButton().isDisplayed(),"Couldn't select product");
+        Assert.assertTrue(addToCartPage.showRemoveButton().isDisplayed(),"Couldn't select product");
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown()
     {
         basePage.quitApplications();

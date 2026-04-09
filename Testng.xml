@@ -8,6 +8,7 @@
             <class name="com.positiveTests.LogoutPageTest"/>
             <class name="com.positiveTests.ProductAddToCartPageTest"/>
             <class name="com.negativeTests.InvalidLoginPageTest"/>
+
         </classes>
     </test>
 </suite>

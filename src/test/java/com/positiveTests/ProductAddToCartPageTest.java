@@ -1,33 +1,33 @@
 package com.positiveTests;
 
+import com.BasePage.BaseClass;
 import com.Listeners.MyListener;
-import com.swagLabsPages.BasePage;
-import com.swagLabsPages.LoginPage;
-import com.swagLabsPages.ProductAddToCartPage;
+import com.swagLabsPages.LoginClass;
+import com.swagLabsPages.ProductAddToCartClass;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 @Listeners(MyListener.class)
 public class ProductAddToCartPageTest
 {
-    public BasePage basePage;
-    public LoginPage loginPage;
-    public ProductAddToCartPage addToCartPage;
+    public BaseClass baseClass;
+    public LoginClass loginPage;
+    public ProductAddToCartClass addToCartPage;
 
     @BeforeMethod
     public void setUp()
     {
-        basePage=new BasePage();
-        basePage.navigateToApplication();
-        loginPage=new LoginPage();
-        loginPage.login(basePage.properties.getProperty("username"),basePage.properties.getProperty("password"));
+        baseClass =new BaseClass();
+        baseClass.navigateToApplication();
+        loginPage=new LoginClass();
+        loginPage.login(baseClass.properties.getProperty("username"), baseClass.properties.getProperty("password"));
         Assert.assertTrue(loginPage.product().isDisplayed(),"Couldn't navigate to Dashboard page");
     }
 
     @Test
     public void verifyProductAddToCart()
     {
-        addToCartPage=new ProductAddToCartPage();
+        addToCartPage=new ProductAddToCartClass();
         addToCartPage.selectProduct();
         Assert.assertTrue(addToCartPage.showRemoveButton().isDisplayed(),"Couldn't select product");
     }
@@ -35,6 +35,6 @@ public class ProductAddToCartPageTest
     @AfterMethod
     public void tearDown()
     {
-        basePage.quitApplications();
+        baseClass.quitApplications();
     }
 }

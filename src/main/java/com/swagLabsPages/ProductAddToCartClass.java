@@ -1,10 +1,11 @@
 package com.swagLabsPages;
 
+import com.BasePage.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ProductAddToCartPage extends BasePage
+public class ProductAddToCartClass extends BaseClass
 {
     public By clickProduct=By.xpath("//div[text()='Sauce Labs Fleece Jacket']");
     public By addToCartButton=By.xpath(" //button[text()='Add to cart']");

@@ -1,9 +1,10 @@
 package com.swagLabsPages;
 
+import com.BasePage.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class LogoutPage extends BasePage
+public class LogoutClass extends BaseClass
 {
     public By menu= By.xpath("//button[text()='Open Menu']");
     public By logoutButton=By.xpath("//a[text()='Logout']");

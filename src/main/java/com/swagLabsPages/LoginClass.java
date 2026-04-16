@@ -1,9 +1,10 @@
 package com.swagLabsPages;
 
+import com.BasePage.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BasePage
+public class LoginClass extends BaseClass
 {
     public By userName=By.xpath("//input[@name='user-name']");
     public By password=By.xpath("//input[@name='password']");

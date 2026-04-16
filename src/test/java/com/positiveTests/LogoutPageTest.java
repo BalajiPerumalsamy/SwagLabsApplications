@@ -1,9 +1,9 @@
 package com.positiveTests;
 
 import com.Listeners.MyListener;
-import com.swagLabsPages.BasePage;
-import com.swagLabsPages.LoginPage;
-import com.swagLabsPages.LogoutPage;
+import com.BasePage.BaseClass;
+import com.swagLabsPages.LoginClass;
+import com.swagLabsPages.LogoutClass;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -13,24 +13,24 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class LogoutPageTest
 {
-    public BasePage basePage;
-    public LoginPage loginPage;
-    public LogoutPage logoutPage;
+    public BaseClass baseClass;
+    public LoginClass loginPage;
+    public LogoutClass logoutPage;
 
     @BeforeMethod
     public void setUp()
     {
-        basePage=new BasePage();
-        basePage.navigateToApplication();
-        loginPage=new LoginPage();
-        loginPage.login(basePage.properties.getProperty("username"),basePage.properties.getProperty("password"));
+        baseClass =new BaseClass();
+        baseClass.navigateToApplication();
+        loginPage=new LoginClass();
+        loginPage.login(baseClass.properties.getProperty("username"), baseClass.properties.getProperty("password"));
         Assert.assertTrue(loginPage.product().isDisplayed(),"Couldn't navigate to Dashboard page");
     }
 
     @Test
     public void verifyLogout()
     {
-        logoutPage=new LogoutPage();
+        logoutPage=new LogoutClass();
         logoutPage.logout();
         Assert.assertTrue(logoutPage.verifyLogo().isDisplayed(),"Couldn't navigate to Login page");
     }
@@ -38,6 +38,6 @@ public class LogoutPageTest
     @AfterMethod
     public void tearDown()
     {
-        basePage.quitApplications();
+        baseClass.quitApplications();
     }
 }

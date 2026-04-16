@@ -1,4 +1,4 @@
-package com.swagLabsPages;
+package com.BasePage;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class BasePage
+public class BaseClass
 {
     public static WebDriver driver;
     public static WebDriverWait wait;
